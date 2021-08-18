@@ -1,0 +1,31 @@
+CASE: kita mau mencari suatu skin dota di inventory kita, tapi karena kita mempunyai banyak sekali item akan susah sekali untuk dicari secara mannual, jadi kita membuat sebuah algoritma agar suatu program dapat mencarikan skin tersebut untuk kita.
+Misalkan kita mempunyai 2000 item di inventory kita, dan skin yang kita cari merupakan 1 dari 2000 item tersebut. 1 page memuatkan 50 item, totalnya 40 page.
+
+APPROACH 1: Kita menyuruh program untuk secara brute force searching satu-satu page di inventory kita sampai akhirnya skinnya ketemu.
+
+PSEUDO CODE
+1 Open Dota inventory
+2 Search for skin at page
+3 If item is on page
+5   send a notification to user
+4 Else if item is not on the page
+6   Proceed to the next page
+7   Repeat step 2
+8 Else 
+9   Quit
+
+Worst case scenario: item berada di page 40 -> O(n)-> O(40)
+
+APPROACH 2: Kita menyuruh progra untuk menyortir item-item di inventory sesuai dengan kategorinya, seperti skin, wallpaper, case, case key, dll. Anggap skin merupakan 50% dari inventory kita.
+PSEUDO CODE
+1 Open Dota inventory
+2 Sort items based on type // (skins, wallpapers, cases, etc)
+3 Open skins page
+4 Search for skin at page
+5 If item is on page
+6   send a notification to user
+7 Else if item is not on page
+8   proceed to next skins page
+9   repeat step 3
+10 Else
+11  Quit
