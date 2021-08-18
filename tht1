@@ -29,3 +29,5 @@ PSEUDO CODE
 9   repeat step 3
 10 Else
 11  Quit
+
+Worst case scenatrio: item berada di page skins terakhir -> O(n/2)-> 0(20)
